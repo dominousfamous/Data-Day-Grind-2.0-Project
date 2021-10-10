@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>COVID Impact</title>
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+        />
+    </head>
+
+    <body>
+        <center><h2><b><i>COVID IMPACT ON COUNTRIES</i></b></h2></center>
+        <table class = "table table-bordered">
+            <thead class = "thead-dark">
+                <tr>
+                    <th>Country</th>
+                    <th>Infected</th>
+                    <th>Recovered</th>
+                    <th>Tested</th>
+                    <th>Deceased</th>
+                    <th>Source</th>
+                    <th>Last Updated</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for i in range(length) %}
+
+                <!--Country-->
+                {% set country = table[i]['country']%}
+
+                <!--Infected-->
+                {% set infected = table[i]['infected']%}
+
+                <!--Recovered-->
+                {% set recovered = table[i]['recovered']%}
+
+                <!--Tested-->
+                {% set tested = table[i]['tested']%}
+
+                <!--Deceased-->
+                {% set deceased = table[i]['deceased']%}
+
+                <!--Source-->
+                {% set source = table[i]['source']%}
+
+                <!--Last Updated Date-->
+                {% set last_updated = table[i]['lastUpdatedApify']%}
+
+                <!--Display data in table row-->
+                <tr>
+                    <td>{{country}}</td>
+                    <td>{{infected}}</td>
+                    <td>{{recovered}}</td>
+                    <td>{{tested}}</td>
+                    <td>{{deceased}}</td>
+                    <td>{{source}}</td>
+                    <td>{{last_updated}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </body>
+</html>
